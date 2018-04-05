@@ -24,7 +24,7 @@
 		return moment;
 	}
 
-	var VERSION = "2.6.6",
+	var VERSION = "0.5.4",
 		zones = {},
 		links = {},
 		names = {},
