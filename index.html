@@ -1,0 +1,51 @@
+﻿<html>
+	<head>
+		<link rel="stylesheet" href="./css/flipclock.css">
+		<script src="./js/jquery.min.js"></script>
+		<script src="./js/flipclock.js"></script>	
+	</head>
+	<body>
+
+	 
+<div id="clock">
+  <p class="time">距离2018年高考仅有</p>
+    <p class="date">
+	 <div class="clock" style="margin:2em;"></div>
+	</p>
+	<p class="test">既然选择远方，便只顾风雨兼程。</p>
+	<p class="Author">Sina:@LookCos</p>
+
+</div>
+
+
+      
+
+		
+		
+		<script type="text/javascript">
+		
+		
+			var clock;
+
+			$(document).ready(function() {
+				var	year=2018,month=6,day=7;
+				// 获取当前的时间
+				var currentDate = new Date();
+
+				// 设置一个未来的时间，在这里是明年高考的时间
+				//var futureDate  = new Date(currentDate.getFullYear() + 1, 0, 1);
+				var futureDate = new Date(year, month-1, day, 9); 
+				// Calculate the difference in seconds between the future and current date
+				var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+				
+				// Instantiate a coutdown FlipClock
+				clock = $('.clock').FlipClock(diff, {
+					clockFace: 'DailyCounter',
+					countdown: true
+				});
+			});
+		</script>
+
+		
+	</body>
+</html>
